@@ -32,13 +32,13 @@ public class PaisTest {
 		pais = new Pais();
 		pais.setId(id);
 		pais.setNome("São Paulo");
-		pais.setPopulacao(100000);
-		pais.setArea(1500000);
+		pais.setPopulacao("100000");
+		pais.setArea("1500000");
 		copia = new Pais();
 		copia.setId(id);
 		copia.setNome("São Paulo");
-		copia.setPopulacao(100000);
-		copia.setArea(1500000);
+		copia.setPopulacao("100000");
+		copia.setArea("1500000");
 		PaisService = new PaisService();
 		System.out.println(pais);
 		System.out.println(copia);
@@ -52,8 +52,8 @@ public class PaisTest {
 		Pais fixture = new Pais();
 		fixture.setId(1);
 		fixture.setNome("Sao Paulo2");
-		fixture.setPopulacao(100000);
-		fixture.setArea(1500000);
+		fixture.setPopulacao("100000");
+		fixture.setArea("1500000");
 		PaisService novoService = new PaisService();
 		Pais novo = novoService.consulta(1);
 		assertEquals("testa inclusao", novo, fixture);
@@ -72,8 +72,8 @@ public class PaisTest {
 	public void test02Atualizar() {
 		System.out.println("atualizar");
 		pais.setNome("São Paulo Atualizado");
-		pais.setPopulacao(999999);
-		copia.setArea(999999);		
+		pais.setPopulacao("999999");
+		copia.setArea("999999");		
 		PaisService.atualizar(pais);
 		pais = PaisService.consulta(pais.getId());
 		assertEquals("testa atualizacao", pais, copia);
@@ -84,8 +84,8 @@ public class PaisTest {
 		System.out.println("excluir");
 		copia.setId(-1);
 		copia.setNome(null);
-		copia.setPopulacao(0);
-		copia.setArea(0);
+		copia.setPopulacao(null);
+		copia.setArea(null);
 		PaisService.excluir(id);
 		pais = PaisService.consulta(id);
 		assertEquals("testa exclusao", pais, copia);

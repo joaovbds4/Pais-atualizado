@@ -6,12 +6,12 @@ public class Pais implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String nome;
-	private long populacao;
-	private double area;
+	private String populacao;
+	private String area;
 	
 	public Pais() {}
 	
-	public Pais(int id, String nome, long populacao, double area) {
+	public Pais(int id, String nome, String populacao, String area) {
 		setNome(nome);
 		setPopulacao(populacao);
 		setArea(area);
@@ -33,20 +33,20 @@ public class Pais implements Serializable{
 		this.nome = nome;
 	}
 
-	public long getPopulacao() {
+	public String getPopulacao() {
 		return populacao;
 	}
 
-	public void setPopulacao(long populacao) {
+	public void setPopulacao(String populacao) {
 		this.populacao = populacao;
 	}
 
-	public double getArea() {
+	public String getArea() {
 		return area;
 	}
 
-	public void setArea(double area) {
-		this.area = area;
+	public void setArea(String area2) {
+		this.area = area2;
 	}
 	
 	@Override

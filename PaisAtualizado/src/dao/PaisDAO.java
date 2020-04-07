@@ -21,8 +21,8 @@ public class PaisDAO {
 		try (PreparedStatement pst = conexao.prepareStatement(inserir)){
 			pst.setInt(1, pais.getId());
 			pst.setString(2, pais.getNome());
-			pst.setLong(3, pais.getPopulacao());
-			pst.setDouble(4, pais.getArea());
+			pst.setString(3, pais.getPopulacao());
+			pst.setString(4, pais.getArea());
 			pst.execute();
 			
 			System.out.println("Pais Cadastrado!");
@@ -48,8 +48,8 @@ public class PaisDAO {
 				
 				int idPais = resultado.getInt("id");
 				String nome = resultado.getString("nome");
-				long populacao = resultado.getLong("populacao");
-				double area = resultado.getDouble("area_total");
+				String populacao = resultado.getString("populacao");
+				String area = resultado.getString("area_total");
 				
 				//Atribuição
 				pais.setId(idPais);
@@ -89,8 +89,8 @@ public class PaisDAO {
 		
 		try (PreparedStatement pst = conexao.prepareStatement(sqlUpdate)){
 			pst.setString(1, pais.getNome());
-			pst.setLong(2, pais.getPopulacao());
-			pst.setDouble(3, pais.getArea());
+			pst.setString(2, pais.getPopulacao());
+			pst.setString(3, pais.getArea());
 			pst.setInt(4, pais.getId());
 			pst.execute();
 		} catch (Exception e) {
