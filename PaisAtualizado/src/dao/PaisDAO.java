@@ -16,13 +16,12 @@ public class PaisDAO {
 	}
 	
 	public int insert (Pais pais) {
-		String inserir = "INSERT INTO Pais (id, nome, populacao, area_total)" + "VALUES(?,?,?,?)";
+		String inserir = "INSERT INTO Pais ( nome, populacao, area_total)" + "VALUES(?,?,?)";
 	
 		try (PreparedStatement pst = conexao.prepareStatement(inserir)){
-			pst.setInt(1, pais.getId());
-			pst.setString(2, pais.getNome());
-			pst.setString(3, pais.getPopulacao());
-			pst.setString(4, pais.getArea());
+			pst.setString(1, pais.getNome());
+			pst.setString(2, pais.getPopulacao());
+			pst.setString(3, pais.getArea());
 			pst.execute();
 			
 			System.out.println("Pais Cadastrado!");
