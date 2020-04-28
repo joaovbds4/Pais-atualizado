@@ -24,7 +24,7 @@ public class ConnectionBD {
 		try {
 			System.out.println("Estabelecendo Conexão...");
 			
-			Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/Pais?useTimezone=true&serverTimezone=America/Sao_Paulo",		
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/pais?useTimezone=true&serverTimezone=America/Sao_Paulo",		
 			"root", "joaovbds123");
 			
 			System.out.println("Conexão Estabelecida com Sucesso");

@@ -40,6 +40,7 @@ public class ManterPaisController extends HttpServlet {
 		pais.setNome(pNome);
 		pais.setPopulacao(pPopulacao);
 		pais.setArea(pArea);
+
 		
 		//instanciar o service
 		PaisService cs = new PaisService();
