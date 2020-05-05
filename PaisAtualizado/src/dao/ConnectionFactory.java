@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionBD {
+public class ConnectionFactory {
 
 	static {
 		try {
@@ -24,7 +24,7 @@ public class ConnectionBD {
 		try {
 			System.out.println("Estabelecendo Conexão...");
 			
-			Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/pais?useTimezone=true&serverTimezone=America/Sao_Paulo",		
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost/pais?useTimezone=true&serverTimezone=America/Sao_Paulo&",		
 			"root", "joaovbds123");
 			
 			System.out.println("Conexão Estabelecida com Sucesso");
@@ -35,4 +35,5 @@ public class ConnectionBD {
 			return null;	
 		}		
 	}
+
 }

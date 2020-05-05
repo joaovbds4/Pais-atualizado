@@ -16,7 +16,7 @@ import service.PaisService;
 /**
  * Servlet implementation class ManterClienteController
  */
-@WebServlet("/ManterCliente.do")
+@WebServlet("/ManterPais.do")
 public class ManterPaisController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,31 +31,29 @@ public class ManterPaisController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//int pId = Integer.parseInt(request.getParameter("id"));
 		String pNome = request.getParameter("nome");
-		String pPopulacao = request.getParameter("populacao");
-		String pArea = request.getParameter("area");
+		double pArea = Double.parseDouble(request.getParameter("area"));
+		long pPopulacao = Long.parseLong(request.getParameter("populacao"));
 		
 		//instanciar o javabean
 		Pais pais = new Pais();
+		//pais.setId(pId);
 		pais.setNome(pNome);
-		pais.setPopulacao(pPopulacao);
 		pais.setArea(pArea);
-
+		pais.setPopulacao(pPopulacao);
 		
 		//instanciar o service
 		PaisService cs = new PaisService();
-		cs.insert(pais);
-		pais = cs.consulta(pais.getId());
+		cs.criar(pais);
+		pais = cs.carregar(pais.getId());
 		
+		request.setAttribute("pais", pais);
 		
-		 //enviar para o jsp
-        request.setAttribute("pais", pais);
-        
-        RequestDispatcher view = 
-        request.getRequestDispatcher("Pais.jsp");
-        view.forward(request, response);
+		RequestDispatcher view = request.getRequestDispatcher("Pais.jsp");
+		view.forward(request, response);
+		
 		
 		
 	}
-
 }

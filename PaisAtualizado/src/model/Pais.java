@@ -2,16 +2,16 @@ package model;
 
 import java.io.Serializable;
 
-public class Pais implements Serializable{
-	private static final long serialVersionUID = 1L;
+public class Pais implements Serializable {
+	private static final long serialVersionUID = 1l;
 	private int id;
 	private String nome;
-	private String populacao;
-	private String area;
+	private long populacao;
+	private double area;
 	
 	public Pais() {}
 	
-	public Pais(int id, String nome, String populacao, String area) {
+	public Pais(int id, String nome, double area, long populacao) {
 		setNome(nome);
 		setPopulacao(populacao);
 		setArea(area);
@@ -33,20 +33,20 @@ public class Pais implements Serializable{
 		this.nome = nome;
 	}
 
-	public String getPopulacao() {
+	public long getPopulacao() {
 		return populacao;
 	}
 
-	public void setPopulacao(String populacao) {
+	public void setPopulacao(long populacao) {
 		this.populacao = populacao;
 	}
 
-	public String getArea() {
+	public double getArea() {
 		return area;
 	}
 
-	public void setArea(String area2) {
-		this.area = area2;
+	public void setArea(double area) {
+		this.area = area;
 	}
 	
 	@Override
