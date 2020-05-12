@@ -14,7 +14,7 @@ public class PaisDAO {
 
 	public int insert (Pais pais) {
 		String inserir = "INSERT INTO Paises (nome, area_total, populacao)" + "VALUES(?,?,?)";
-	
+		System.out.println("passou aq");
 		try (PreparedStatement pst = conexao.prepareStatement(inserir)){
 			
 			pst.setString(1, pais.getNome());
