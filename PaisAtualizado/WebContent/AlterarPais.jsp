@@ -22,27 +22,28 @@
         <!-- Formulario para inclusao de clientes -->
         <form action="ManterPais.do" method="get">
             <!-- area de campos do form -->
+            <input type="hidden" name="id" id="id" value="${pais.id}">
             <div class="row">
                 <div class="form-group col-md-12">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" name="nome" id="nome" required maxlength="15" placeholder="Nome do Pais">
+                    <input type="text" class="form-control" name="nome" id="nome" required maxlength="15" value="${pais.nome }">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="fone">Area</label>
-                    <input type="number" class="form-control" name="area" id="area" maxlength="15" placeholder="Digite a area total do Pais em KM">
+                    <input type="number" class="form-control" name="area" id="area" maxlength="15" value="${pais.area }">
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="email">Populacao</label>
-                    <input type="number" class="form-control" name="populacao" id="populacao" required maxlength="60" placeholder="Digite o numero de habitantes">
+                    <input type="number" class="form-control" name="populacao" id="populacao" required maxlength="60" value="${pais.populacao }">
                 </div>
             </div>
             <hr />
             <div id="actions" class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary" name="acao" value="Criar">Salvar</button>
+                    <button type="submit" class="btn btn-primary" name="acao" value="Alterar">Salvar</button>
                     <a href="ListarPais.jsp" class="btn btn-default">Cancelar</a>
                 </div>
             </div>
