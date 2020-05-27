@@ -20,7 +20,7 @@
     <div id="main" class="container">
         <h3 class="page-header">Incluir Pais</h3>
         <!-- Formulario para inclusao de clientes -->
-        <form action="ManterPais.do" method="get">
+        <form action="controller.do" method="get">
             <!-- area de campos do form -->
             <div class="row">
                 <div class="form-group col-md-12">
@@ -42,7 +42,7 @@
             <hr />
             <div id="actions" class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary" name="acao" value="Criar">Salvar</button>
+                    <button type="submit" class="btn btn-primary" name="command" value="CriarPais">Salvar</button>
                     <a href="ListarPais.jsp" class="btn btn-default">Cancelar</a>
                 </div>
             </div>

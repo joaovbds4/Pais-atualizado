@@ -22,8 +22,10 @@
 	</div>
 	<div class="modal-body"> Deseja realmente excluir este pais?
 	</div>
-	<div class="modal-footer"> <form action	="ManterPais.do"method="post"> 
-	<input type	="hidden"name="id" id="id_excluir" /> <button type="submit"class="btn btn-primary" name="acao" value="Excluir">Sim
+	<div class="modal-footer"> 
+	<form action="controller.do"method="post"> 
+	<input type	="hidden"name="id" id="id_excluir" /> 
+	<button type="submit"class="btn btn-primary" name="command" value="ExcluirPais">Sim
 	</button>
 	<button type ="button"class="btn btn-default" data-dismiss="modal">N&atilde;o
 	</button>
@@ -34,13 +36,14 @@
 	</div>
 	<!-- /.modal --> <!-- Barra superior comos menus denavegação --> <c:import url ="Menu.jsp"/>
 	<!-- Container Principal --> <div id ="main"class="container"> 
-	<form action="listarpaises.do "method="post"> <div id ="top"class="row">
+	<form action="controller.do "method="post"> <div id ="top"class="row">
 	<div class="col-md-3">
 	<h2>Paises</h2>
 	</div>
 	<div class="col-md-6"> <div class ="input-grouph2">
 	<input name ="data[search]"class="form-control" id="search"	type="text"	placeholder="Pesquisar pais (deixe vazio para trazer todos)">
-	<span class="input-group-btn"> <button class ="btn btn-primary"type="submit" name="acao" value="buscar"> 
+	<input type="hidden" name="acao" value="buscar">
+	<span class="input-group-btn"> <button class ="btn btn-primary"type="submit" name="command" value="ListarPaises"> 
 	<span class="glyphiconglyphicon-search">
 	</span>
 	</button>
@@ -74,9 +77,9 @@
 					<td>${pais.populacao }</td>
 					<td>${pais.area }</td>
 					<td class="actions"> <a class ="btn btn-success
-						btn-xs"href="ManterPais.do?acao=Visualizar&id=${pais.id}">Visualizar</a>
+						btn-xs"href="controller.do?command=VisualizarPais&id=${pais.id}">Visualizar</a>
 					<a class ="btn btn-warning
-						btn-xs"href="ManterPais.do?acao=Editar&id=${pais.id }">Editar</a>
+						btn-xs"href="controller.do?command=EditarPais&id=${pais.id }">Editar</a>
 					<button id="btn${pais.id}%>"type="button"class="btn	btn-danger btn-xs"data-toggle="modal"data-target="#delete-modal"data-pais="${pais.id }">Excluir
 					</button>
 					</td>
